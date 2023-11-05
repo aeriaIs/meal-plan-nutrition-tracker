@@ -1,0 +1,10 @@
+{
+  "Access token expired.": "Akses token telah kadaluarsa. Mohon login kembali.",
+  "Invalid access token.": "Akses token tidak valid. Mohon login kembali.",
+  "Your session has expired.": "Sesi Anda telah kadaluarsa. Silahkan login kembali.",
+  "Your email has not been verified.": "Email Anda belum diverifikasi.",
+  "Your phone number has not been verified.": "Nomor telepon Anda belum diverifikasi.",
+  "Your account has not been verified.": "Login ilegal terdeteksi. Silahkan login kembali.",
+  "The app version is outdated.": "Versi aplikasi sudah usang. Silahkan perbarui aplikasi.",
+  "Access Key denied.": "Akses Key ditolak."
+}
