@@ -31,7 +31,7 @@ const CustomButton = (props: CustomButtonPropsWithChildren) => {
     textWeight = 'bold',
     textSize = 16,
     customTextStyle,
-    textColor = type === 'outline' ? backgroundColor : theme.colors.gray[100],
+    textColor = type === 'outline' ? backgroundColor : 'white',
   } = props;
 
   const outlineTypeStyle = {
