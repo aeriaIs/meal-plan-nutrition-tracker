@@ -1,7 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import {FOOD_LIST, MAIN} from './navigations';
+
 import MainScreen from '../screens/MainScreen';
+import FoodListScreen from '../screens/FoodList';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,8 +15,13 @@ const AppNavigation = () => {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen
-            name={'MAIN'}
+            name={MAIN}
             component={MainScreen}
+            options={{animation: 'slide_from_right'}}
+          />
+          <Stack.Screen
+            name={FOOD_LIST}
+            component={FoodListScreen}
             options={{animation: 'slide_from_right'}}
           />
         </Stack.Navigator>
