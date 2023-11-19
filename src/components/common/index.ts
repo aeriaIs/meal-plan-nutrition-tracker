@@ -7,3 +7,4 @@ export * from './Icon';
 export * from './Loader';
 export * from './ReadmoreText';
 export * from './Text';
+export * from './CollapsibleBox';
