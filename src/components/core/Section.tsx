@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   sectionContainer: {
     flex: 1,
     paddingHorizontal: 16,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
   },
 });
 

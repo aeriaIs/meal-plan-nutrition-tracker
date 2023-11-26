@@ -13,7 +13,7 @@ export type CustomTextProps = TextProps & {
 
 const OrdinaryText = (props: CustomTextProps) => {
   const {
-    color = theme.colors.gray[900],
+    color = 'white',
     size = 14,
     weight = 'regular',
     align = 'left',

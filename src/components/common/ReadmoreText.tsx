@@ -39,7 +39,7 @@ const ReadMoreText: FC<ReadMoreTextProps> = memo(props => {
           size={size}
           weight="semibold"
           align="left"
-          color={theme.colors.main[500]}
+          color={theme.colors.main[600]}
           style={{marginTop: 4}}>
           {showMore ? 'Tampilkan Lebih Sedikit' : 'Tampilkan Lebih Banyak'}
         </OrdinaryText>

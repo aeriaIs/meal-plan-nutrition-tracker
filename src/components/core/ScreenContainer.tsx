@@ -1,5 +1,6 @@
 import {PropsWithChildren} from 'react';
 import {View, SafeAreaView, StatusBar} from 'react-native';
+import {theme} from '../../utils/theme';
 
 type ScreenContainerProps = PropsWithChildren<{
   style?: {};
@@ -10,15 +11,15 @@ type ScreenContainerProps = PropsWithChildren<{
 const marginTop = StatusBar.currentHeight || 0;
 
 const ScreenContainer = (props: ScreenContainerProps) => {
-  const {children, style, safe = true, statusBar} = props;
+  const {children, style, safe = true} = props;
   const {
     show = true,
     animated = true,
     translucent = true,
-    barStyle = 'dark-content',
-    backgroundColor = 'white',
+    barStyle = 'light-content',
+    backgroundColor = theme.colors.darkBlue[800],
     showHideTransition = 'fade',
-  } = statusBar;
+  } = props?.statusBar || {};
 
   return (
     <>
@@ -63,7 +64,7 @@ const ScreenContainer = (props: ScreenContainerProps) => {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: theme.colors.darkBlue[800],
   },
 };
 

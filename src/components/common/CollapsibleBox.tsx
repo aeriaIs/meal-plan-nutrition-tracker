@@ -58,7 +58,7 @@ const CollapsibleBox = (props: CollapsibleBoxProps) => {
             <Icons
               name={open ? 'chevron-up' : 'chevron-down'}
               size={24}
-              color={theme.colors.gray[700]}
+              color={theme.colors.gray[100]}
             />
           </View>
         </View>

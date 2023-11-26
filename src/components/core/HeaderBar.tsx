@@ -59,7 +59,7 @@ const TopComponent = ({backgroundColor, barStyle}: TopComponentProps) => {
 const HeaderBar = (props: HeaderBarProps) => {
   const {
     headerStyle,
-    backgroundColor = 'white',
+    backgroundColor = theme.colors.darkBlue[800],
     topSpacing,
     barStyle = 'dark-content',
     title,
@@ -80,12 +80,12 @@ const HeaderBar = (props: HeaderBarProps) => {
         style={[
           {
             zIndex: 1,
-            height: 44,
+            height: 40,
             position: 'relative',
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: headerStyle?.paddingHorizontal ?? 16,
-            backgroundColor: backgroundColor ?? 'white',
+            backgroundColor: backgroundColor,
           },
           headerStyle,
         ]}>
@@ -104,9 +104,9 @@ const HeaderBar = (props: HeaderBarProps) => {
             {leftContent.title ? (
               <Text
                 style={{
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  color: leftContent.color ?? 'black',
+                  fontSize: 16,
+                  fontWeight: '600',
+                  color: leftContent.color ?? 'white',
                 }}>
                 {leftContent.loading ? '...' : leftContent.title}
               </Text>
@@ -114,7 +114,7 @@ const HeaderBar = (props: HeaderBarProps) => {
               <Icons
                 name={leftContent.icon ?? defaultIconLeft}
                 size={leftContent.size ?? 24}
-                color={leftContent.color ?? theme.colors.gray[900]}
+                color={leftContent.color ?? 'white'}
               />
             )}
           </TouchableOpacity>
@@ -132,9 +132,9 @@ const HeaderBar = (props: HeaderBarProps) => {
               style={[
                 {
                   flex: 1,
-                  fontSize: titleTextSize || 18,
-                  fontWeight: 'bold',
-                  color: theme.colors.gray[900],
+                  fontSize: titleTextSize || 16,
+                  fontWeight: '600',
+                  color: 'white',
                 },
                 customTitleStyle,
               ]}>
@@ -155,8 +155,8 @@ const HeaderBar = (props: HeaderBarProps) => {
             {rightContent.title ? (
               <Text
                 style={{
-                  fontSize: 18,
-                  fontWeight: 'bold',
+                  fontSize: 16,
+                  fontWeight: '600',
                   color: rightContent.color ?? 'black',
                 }}>
                 {rightContent.title}
@@ -165,7 +165,7 @@ const HeaderBar = (props: HeaderBarProps) => {
               <Icons
                 name={rightContent.icon ?? defaultIconRight}
                 size={rightContent.size ?? 24}
-                color={rightContent.color ?? theme.colors.gray[900]}
+                color={rightContent.color ?? 'white'}
               />
             )}
           </TouchableOpacity>
