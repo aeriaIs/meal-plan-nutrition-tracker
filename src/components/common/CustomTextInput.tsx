@@ -53,7 +53,7 @@ const CustomTextInput = (props: TextInputProp) => {
     <View style={[styles.container, style]}>
       {label && (
         <OrdinaryText
-          color={theme.colors.gray[600]}
+          color={theme.colors.gray[100]}
           size={12}
           style={[
             {
@@ -72,7 +72,7 @@ const CustomTextInput = (props: TextInputProp) => {
           {
             borderColor: focus
               ? theme.colors.main[500]
-              : theme.colors.gray[100],
+              : theme.colors.gray[400],
           },
         ]}>
         {left && <View style={{paddingRight: 4}}>{left}</View>}
@@ -80,12 +80,12 @@ const CustomTextInput = (props: TextInputProp) => {
           style={[
             styles.input,
             {
-              color: editable ? theme.colors.gray[900] : theme.colors.gray[400],
+              color: editable ? 'white' : theme.colors.gray[400],
             },
             inputStyle,
           ]}
           placeholder={placeholder || label}
-          placeholderTextColor={theme.colors.gray[400]}
+          placeholderTextColor={theme.colors.gray[300]}
           value={value}
           onChangeText={onChangeText}
           keyboardType={keyboardType}
@@ -143,10 +143,10 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     paddingHorizontal: 8,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: theme.colors.gray[100],
+    borderColor: theme.colors.gray[400],
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
