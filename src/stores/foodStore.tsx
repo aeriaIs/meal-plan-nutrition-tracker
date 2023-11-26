@@ -6,7 +6,23 @@ import {
 } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-type AuthState = {
+// Example of Food data structure
+// {
+//   id: 1,
+//   name: 'Pizza',
+//   image:
+//     'https://m.ftscrt.com/food/49aed08f-acb4-4aa4-a12d-2f88d26db3a9_lg_sq.jpg',
+//   unit: 'gram',
+//   size: 50,
+//   nutrition: {
+//     calories: 65,
+//     protein: 1.2,
+//     carbs: 14.3,
+//     fat: 0.1,
+//   },
+// },
+
+type FoodState = {
   isLoading: boolean;
   list: any[];
   detail: any;
@@ -77,16 +93,27 @@ const initialState = {
   detail: {},
 };
 
-const useFoodStore = create<AuthState>()(
+const useFoodStore = create<FoodState>()(
   subscribeWithSelector(
     persist(
       (set, get) => ({
         ...initialState,
-        addFoodList: (data: any, callback?: () => void) => {
+        addFoodAction: (data: any, callback?: () => void) => {
           const {list} = get();
 
           set({
-            list: [data, ...list.list],
+            isLoading: true,
+          });
+
+          set({
+            isLoading: false,
+            list: [
+              {
+                id: list.length + 1,
+                ...data,
+              },
+              ...list,
+            ],
           });
 
           callback && callback();
