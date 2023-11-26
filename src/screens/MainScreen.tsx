@@ -5,6 +5,7 @@ import {ScreenContainer, Section} from '../components/core';
 
 import {theme} from '../utils/theme';
 import {FOOD_LIST} from '../navigations/navigations';
+import useFoodStore from '../stores/foodStore';
 
 type NutritionData = {
   kkal: number;
@@ -124,6 +125,11 @@ const FOOD_DATA = [
 ];
 
 const MainScreen = ({navigation}: {navigation: any}) => {
+  const {list: foodList} = useFoodStore();
+  console.log(
+    '🚀 ~ file: MainScreen.tsx:129 ~ MainScreen ~ foodList:',
+    foodList,
+  );
   return (
     <ScreenContainer>
       <Section>
